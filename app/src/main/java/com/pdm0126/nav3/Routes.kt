@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 //navkey is the key to identify the destination
- interface Routes : NavKey {
+sealed interface Routes : NavKey {
 
     @Serializable
     data object HomeScreen: Routes{
