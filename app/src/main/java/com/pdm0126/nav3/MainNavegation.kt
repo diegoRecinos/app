@@ -16,7 +16,8 @@ import com.pdm0126.nav3.ui.screens.Screen1
 @Composable
 fun App(modifier: Modifier = Modifier){
     //creando el backstack
-    val backStack = rememberNavBackStack()
+    //backstack needs to know the initial destination
+    val backStack = rememberNavBackStack(Routes.HomeScreen)
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
