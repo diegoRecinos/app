@@ -9,6 +9,10 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 
+import com.pdm0126.nav3.ui.screens.HomeScreen
+import com.pdm0126.nav3.ui.screens.Screen2
+import com.pdm0126.nav3.ui.screens.Screen1
+
 @Composable
 fun App(modifier: Modifier = Modifier){
     //creando el backstack
@@ -28,18 +32,20 @@ fun App(modifier: Modifier = Modifier){
 
             entryProvider = entryProvider{
                 //mapear cada objeto de routes.kt a un composable
-//                entry<Routes.HomeScreen>{
-//                    HomeScreen(
-//                    )
-//                }
+                entry<Routes.HomeScreen>{
+                    HomeScreen(
+                        onNavigateToScreen1 = { backStack.add(Routes.Screen1) },
+                        onNavigateToScreen2 = { backStack.add(Routes.Screen2) }
+                    )
+                }
 
-                //entry<Routes.Screen2>{
-//                   Screen2(onBack = {backStack.removeLastOrNull()})
-//                }
+                entry<Routes.Screen1>{
+                    Screen1(onBack = { backStack.removeLastOrNull() })
+                }
 
-//                entry<Routes.Screen3>{
-//                    Screeen3(onBack = {backStack.removeLastOrNull()})
-//                }
+                entry<Routes.Screen2>{
+                    Screen2(onBack = {backStack.removeLastOrNull()})
+                }
 
             }
 
