@@ -1,4 +1,4 @@
-package com.pdm0126.nav3.ui.components
+package com.pdm0126.api_json_placeholder.ui.components
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

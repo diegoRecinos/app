@@ -1,4 +1,4 @@
-package com.pdm0126.nav3
+package com.pdm0126.api_json_placeholder
 
 import androidx.navigation3.runtime.NavKey
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package com.pdm0126.nav3
+package com.pdm0126.api_json_placeholder
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -9,9 +9,9 @@ import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
 
-import com.pdm0126.nav3.ui.screens.HomeScreen
-import com.pdm0126.nav3.ui.screens.Screen2
-import com.pdm0126.nav3.ui.screens.Screen1
+import com.pdm0126.api_json_placeholder.ui.screens.homescreen.HomeScreen
+import com.pdm0126.api_json_placeholder.ui.screens.screen2.Screen2
+import com.pdm0126.api_json_placeholder.ui.screens.screen1.Screen1
 
 @Composable
 fun App(modifier: Modifier = Modifier){

@@ -1,4 +1,4 @@
-package com.pdm0126.nav3.ui.screens
+package com.pdm0126.api_json_placeholder.ui.screens.screen2
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

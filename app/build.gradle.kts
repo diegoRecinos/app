@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pdm0126.nav3"
+    namespace = "com.pdm0126.api_json_placeholder"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.pdm0126.nav3"
+        applicationId = "com.pdm0126.api_json_placeholder"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -74,5 +74,7 @@ dependencies {
 
     // ... otras dependenciasimplementation("androidx.compose.material:material-icons-core")
     implementation(libs.androidx.compose.material.icons.extended)
+
+    //ktor
 
 }
