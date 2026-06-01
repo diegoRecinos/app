@@ -1,4 +1,4 @@
-package com.pdm0126.api_json_placeholder
+package com.pdm0126.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

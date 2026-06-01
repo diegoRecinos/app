@@ -1,4 +1,4 @@
-package com.pdm0126.api_json_placeholder.ui.screens.homescreen
+package com.pdm0126.app.ui.screens.screen2
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,18 +13,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HomeScreen(
-    onNavigateToScreen1: () -> Unit,
-    onNavigateToScreen2: () -> Unit
-
-){
+fun Screen2(onBack: () -> Unit, modifier: Modifier = Modifier){
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Button(onClick = onNavigateToScreen1) { Text("Screen 1") }
+        Text(text = "Screen 2")
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = onNavigateToScreen2) {Text("Screen 2") }
+        Button(
+            onClick = onBack,
+            modifier = modifier
+        ) { Text("Back") }
     }
 }

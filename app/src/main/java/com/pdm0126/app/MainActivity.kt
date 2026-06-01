@@ -1,17 +1,17 @@
-package com.pdm0126.api_json_placeholder
+package com.pdm0126.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.pdm0126.api_json_placeholder.ui.theme.Nav3Theme
+import com.pdm0126.app.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            Nav3Theme {
+            AppTheme {
                 App()
             }
         }

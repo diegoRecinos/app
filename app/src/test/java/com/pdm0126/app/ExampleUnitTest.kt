@@ -1,4 +1,4 @@
-package com.pdm0126.api_json_placeholder
+package com.pdm0126.app
 
 import org.junit.Test
 

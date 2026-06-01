@@ -1,4 +1,4 @@
-package com.pdm0126.api_json_placeholder.ui.theme
+package com.pdm0126.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

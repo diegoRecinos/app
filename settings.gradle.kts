@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PDM-api-json-placeholder"
+rootProject.name = "app"
 include(":app")
  

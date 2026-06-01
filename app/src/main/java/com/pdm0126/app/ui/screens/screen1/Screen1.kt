@@ -1,4 +1,4 @@
-package com.pdm0126.api_json_placeholder.ui.screens.screen1
+package com.pdm0126.app.ui.screens.screen1
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

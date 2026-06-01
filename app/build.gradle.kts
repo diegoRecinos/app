@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.pdm0126.api_json_placeholder"
+    namespace = "com.pdm0126.app"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -14,7 +14,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.pdm0126.api_json_placeholder"
+        applicationId = "com.pdm0126.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -76,5 +76,9 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
 
     //ktor
-
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.okhttp)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.client.logging)
 }
