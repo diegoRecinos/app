@@ -69,3 +69,74 @@ fun PostItem(post: Post) {
         }
     }
 }
+
+import com.agarcia.pdm_course_2026.BuildConfig
+
+  private const val API_KEY = BuildConfig.TMDB_TOKEN
+
+object KtorClient {
+  private const val BASE_URL = "https://api.themoviedb.org/3/"
+  private const val API_KEY = BuildConfig.TMDB_TOKEN
+
+
+  val client = HttpClient(OkHttp) {
+    // Parseo automático de JSON
+    install(ContentNegotiation) {
+      json(Json {
+        ignoreUnknownKeys = true
+      })
+    }
+
+    // Plugin de logging
+    install(Logging) {
+      logger = object : Logger {
+        override fun log(message: String) {
+          Log.d("KtorClient", message)
+        }
+      }
+      level = LogLevel.ALL
+    }
+
+    // Configuración aplicada a todas las peticiones
+    defaultRequest {
+      url(BASE_URL)
+      header(HttpHeaders.Authorization, "Bearer $API_KEY")
+      header(HttpHeaders.Accept, "application/json")
+    }
+  }
+}
+
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+  localProperties.load(FileInputStream(localPropertiesFile))
+}
+
+val tmdbToken: String = localProperties.getProperty("TMDB_TOKEN") ?: ""
+  defaultConfig {
+    applicationId = "com.agarcia.pdm_course_2026"
+    minSdk = 24
+    targetSdk = 36
+    versionCode = 1
+    versionName = "1.0"
+
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    buildConfigField("String", "TMDB_TOKEN", "\"$tmdbToken\"")
+  }
+
+ buildFeatures { buildConfig = true }
+
+   buildFeatures {
+     compose = true
+   }
+
+
+  Si la API requiere la llave directamente en la URL (ej. ?api_key=123):
+  Kotlin
+  defaultRequest {
+      url(BASE_URL)
+      url {
+          parameters.append("api_key", API_KEY)
+      }
+  }
