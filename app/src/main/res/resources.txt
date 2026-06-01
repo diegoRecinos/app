@@ -1,0 +1,71 @@
+
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.okhttp.OkHttp
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.defaultRequest
+import io.ktor.http.contentType
+import io.ktor.serialization.kotlinx.json.json
+import kotlinx.serialization.json.Json
+import io.ktor.http.ContentType
+
+
+dependencies {
+    // ViewModel Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
+
+    // Navigation 3
+    implementation("androidx.navigation3:navigation3-runtime:3.0.0-alpha01")
+    // implementation("androidx.navigation3:navigation3-ui:3.0.0-alpha01") // La dejé comentada como la tenías
+
+    // Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
+
+    // Coil (Versión 3)
+    implementation("io.coil-kt.coil3:coil-compose:3.0.4")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.4")
+
+    // Material Icons
+    implementation("androidx.compose.material:material-icons-core:1.7.6")
+    implementation("androidx.compose.material:material-icons-extended:1.7.6")
+
+    // Ktor Client
+    implementation("io.ktor:ktor-client-core:3.0.3")
+    implementation("io.ktor:ktor-client-okhttp:3.0.3")
+    implementation("io.ktor:ktor-client-content-negotiation:3.0.3")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.0.3")
+    implementation("io.ktor:ktor-client-logging:3.0.3")
+}
+
+
+@Composable
+fun PostItem(post: Post) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Row( // Usamos Row para poner la imagen a la izquierda
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Ejemplo de AsyncImage
+            AsyncImage(
+                // Generamos una imagen aleatoria usando el ID del post como semilla (seed)
+                model = "https://picsum.photos/seed/${post.id}/200",
+                contentDescription = "Post Image",
+                modifier = Modifier
+                    .size(80.dp) // Tamaño de la imagen
+                    .clip(RoundedCornerShape(8.dp)), // Bordes redondeados
+                contentScale = ContentScale.Crop // Para que la imagen llene el espacio
+            )
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Column {
+                Text(text = post.title, style = MaterialTheme.typography.titleMedium)
+                Text(text = post.body, style = MaterialTheme.typography.bodySmall, maxLines = 2)
+            }
+        }
+    }
+}
