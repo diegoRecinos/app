@@ -1,0 +1,32 @@
+@Composable
+fun PostItem(post: Post) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Row( // Usamos Row para poner la imagen a la izquierda
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Ejemplo de AsyncImage
+            AsyncImage(
+                // Generamos una imagen aleatoria usando el ID del post como semilla (seed)
+                model = "https://picsum.photos/seed/${post.id}/200",
+                contentDescription = "Post Image",
+                modifier = Modifier
+                    .size(80.dp) // Tamaño de la imagen
+                    .clip(RoundedCornerShape(8.dp)), // Bordes redondeados
+                contentScale = ContentScale.Crop // Para que la imagen llene el espacio
+            )
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Column {
+                Text(text = post.title, style = MaterialTheme.typography.titleMedium)
+                Text(text = post.body, style = MaterialTheme.typography.bodySmall, maxLines = 2)
+            }
+        }
+    }
+}

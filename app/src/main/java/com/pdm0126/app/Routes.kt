@@ -25,6 +25,4 @@ sealed interface Routes : NavKey {
     }
 
 
-    data class SubScreen1(val id: Int): Routes{}
-
 }
